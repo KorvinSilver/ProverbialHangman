@@ -13,8 +13,9 @@ To play, simply run hangman.py with Python 3.6
 
 Tested on Linux only.
 
-A simple GUI was made using PySide.
-To play, run hangman-pyside.py
+A simple GUI was made using PySide. To play, run hangman-pyside.py
+At first start, a language selector window will pop up. Later it'll
+be accessible by clicking on the small button with the globe icon.
 
 ### Screenshots
 
