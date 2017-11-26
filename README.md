@@ -13,7 +13,8 @@ To play, simply run hangman.py with Python 3.6
 
 Tested on Linux only.
 
-A simple GUI was made using PySide
+A simple GUI was made using PySide.
+To play, run hangman-pyside.py
 
 ### Screenshots
 
