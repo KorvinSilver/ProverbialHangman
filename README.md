@@ -21,4 +21,4 @@ A simple GUI was made using PySide
 <br>
 <img src="screenshots/screenshot_4.png" width=235 height=103> <img src="screenshots/screenshot_5.png" width=235 height=103>
 <br>
-<img src="screenshots/screenshot_gui1.png" width=150 height=63> <img src="screenshots/screenshot_gui2.png" width=340 height=213> <img src="screenshots/screenshot_gui3.png" width=340 height=213>
+<img src="screenshots/screenshot_gui2.png" width=340 height=213> <img src="screenshots/screenshot_gui3.png" width=340 height=213> <img src="screenshots/screenshot_gui1.png" width=150 height=63>
