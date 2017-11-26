@@ -13,7 +13,7 @@ Synopsis:
             hangman.py [ARGUMENT]
 
 Description:
-            A simple hangman game that runs in the command line
+            A simple hangman game that runs in the command line.
             To play the game, figure out a proverb by guessing
             letters. If you guess a letter that's not in the
             proverb and you've already guessed it, you get
@@ -52,7 +52,8 @@ Exit codes:
 import os
 import random
 import sys
-import lang
+
+from lib import get_ui_strings
 
 __author__ = "Korvin F. Ezüst"
 __copyright__ = "Copyright (c) 2017., Korvin F. Ezüst"
@@ -62,8 +63,7 @@ __email__ = "dev@korvin.eu"
 __status__ = "Development"
 
 
-# TODO: test under Windows
-# TODO: build GUI
+# TODO: test on Windows
 
 
 def get_proverb(filename):
@@ -84,7 +84,7 @@ def get_proverb(filename):
 
     # starts with index 1 because the first (index 0) line contains
     # the alphabet with all the letters used in proverbs in the file
-    x = random.randint(1, i)
+    x = random.randint(1, _)
     with open(filename) as f:
         for _, line in enumerate(f):
             if _ == x:
@@ -342,7 +342,7 @@ if __name__ == '__main__':
         sys.exit(2)
 
     language_file = os.path.join("resources", "lang.csv")
-    language_list = lang.get_language_list(language_file)
+    language_list = get_ui_strings.get_language_list(language_file)
 
     # Set a string to clear the command line
     # Tested only on Linux
@@ -368,7 +368,7 @@ if __name__ == '__main__':
 
     # Get the strings corresponding to selected language
     # used in-game from lang.csv
-    string_list = lang.get_strings(language_file, language)
+    string_list = get_ui_strings.get_strings(language_file, language)
 
     # File name and path of proverbs file
     prv_file = string_list[1]
