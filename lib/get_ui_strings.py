@@ -3,7 +3,7 @@
 
 """
 Project:    Hangman
-File:       lang.py
+File:       get_ui_strings.py
 Author:     Korvin F. Ezüst
 
 Created:    2017-11-24
