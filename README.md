@@ -13,10 +13,12 @@ To play, simply run hangman.py with Python 3.6
 
 Tested on Linux only.
 
-GUI coming soon.
+A simple GUI was made using PySide
 
 ### Screenshots
 
 <img src="screenshots/screenshot_1.png" width=235 height=103> <img src="screenshots/screenshot_2.png" width=235 height=103> <img src="screenshots/screenshot_3.png" width=235 height=103>
 <br>
 <img src="screenshots/screenshot_4.png" width=235 height=103> <img src="screenshots/screenshot_5.png" width=235 height=103>
+<br>
+<img src="screenshots/screenshot_gui1.png" width=150 height=63> <img src="screenshots/screenshot_gui2.png" width=340 height=213> <img src="screenshots/screenshot_gui3.png" width=340 height=213>
