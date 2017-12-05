@@ -22,9 +22,16 @@ Notes:
 """
 
 from hangman import *
-from lib.GuiMain import *
-from lib.GuiLanguageSelect import *
 from lib.get_ui_strings import *
+
+try:
+    from lib.GuiMain2 import *
+    from PySide2.QtWidgets import *
+    from lib.GuiLanguageSelect2 import *
+except ImportError:
+    from lib.GuiMain import *
+    from PySide.QtGui import *
+    from lib.GuiLanguageSelect import *
 
 __author__ = "Korvin F. Ezüst"
 __copyright__ = "Copyright (c) 2017., Korvin F. Ezüst"
@@ -33,16 +40,17 @@ __version__ = "1.0"
 __email__ = "dev@korvin.eu"
 __status__ = "Development"
 
+
 # TODO: test on Windows
 
 
-class SelectLanguage(QtGui.QMainWindow, Ui_LanguageSelector):
+class SelectLanguage(QMainWindow, Ui_LanguageSelector):
     def __init__(self):
         super(SelectLanguage, self).__init__()
         self.setupUi(self)
 
         # center window
-        self.setGeometry(QtGui.QStyle.alignedRect(
+        self.setGeometry(QStyle.alignedRect(
             QtCore.Qt.LeftToRight,
             QtCore.Qt.AlignCenter,
             self.size(),
@@ -70,13 +78,13 @@ class SelectLanguage(QtGui.QMainWindow, Ui_LanguageSelector):
         self.SetLanguage.clicked.connect(start_game)
 
 
-class GameWindow(QtGui.QMainWindow, Ui_MainWindow):
+class GameWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, selected_lang="English"):
         super(GameWindow, self).__init__()
         self.setupUi(self)
 
         # center window
-        self.setGeometry(QtGui.QStyle.alignedRect(
+        self.setGeometry(QStyle.alignedRect(
             QtCore.Qt.LeftToRight,
             QtCore.Qt.AlignCenter,
             self.size(),
@@ -89,6 +97,7 @@ class GameWindow(QtGui.QMainWindow, Ui_MainWindow):
             self.hide()
             self.lang_changer = SelectLanguage()
             self.lang_changer.show()
+
         self.ToolButton.clicked.connect(change_language)
 
         # restart game when the new game button is clicked
@@ -120,7 +129,7 @@ class GameWindow(QtGui.QMainWindow, Ui_MainWindow):
         # set up message window to be used
         # in case of invalid input and at the end of the game
         def message_box(title, msg):
-            msg_box = QtGui.QMessageBox()
+            msg_box = QMessageBox()
             msg_box.setWindowTitle(title)
             msg_box.setText(msg)
             msg_box.exec_()
@@ -220,7 +229,7 @@ class GameWindow(QtGui.QMainWindow, Ui_MainWindow):
 
 
 if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
     # check if language was selected previously
     language_selected = os.path.join("resources", "language_selected")
