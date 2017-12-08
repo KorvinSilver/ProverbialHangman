@@ -320,6 +320,17 @@ def get_max_guess_number():
     return 6
 
 
+def clear():
+    """
+    Clear the command line screen
+    TODO: make it platform-independent
+
+    :return: None
+    :rtype: None
+    """
+    print("\033[H\033[J", end="")
+
+
 if __name__ == '__main__':
     # Wrong argument message
     message = "Argument unrecognized.\n" \
@@ -344,13 +355,8 @@ if __name__ == '__main__':
     language_file = os.path.join("resources", "lang.csv")
     language_list = get_ui_strings.get_language_list(language_file)
 
-    # Set a string to clear the command line
-    # Tested only on Linux
-    cls = "\033[H\033[J"
-    # Clear command line
-    print(cls, end="")
-
     # Ask player to choose language
+    clear()
     for i, l in enumerate(language_list):
         print(f"    {i + 1}: {l}")
 
@@ -380,7 +386,7 @@ if __name__ == '__main__':
     alphabet = get_alphabet(prv_path)
 
     # Welcome message
-    print(cls, end="")
+    clear()
     print(string_list[4])
     input()
 
@@ -400,7 +406,7 @@ if __name__ == '__main__':
     # Continue asking for input until the hangman
     # or the game is finished
     while len(non_matches) < get_max_guess_number():
-        print(cls, end="")
+        clear()
 
         print(draw_hangman(len(non_matches)))
 
@@ -452,8 +458,7 @@ if __name__ == '__main__':
             print(bye)
             sys.exit(0)
 
-    print(cls, end="")
-
+    clear()
     print(draw_hangman(len(non_matches)), "\n")
     print(proverb.upper(), "\n")
     # lose message
